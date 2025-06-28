@@ -29,10 +29,11 @@ jobs:
 
       - name: Download and install Keploy CLI
         run: |
-          curl -Lo keploy-bin https://github.com/keploy/keploy/releases/download/v0.5.11/keploy-linux-amd64
+          curl -Lo keploy-bin https://github.com/keploy/keploy/releases/latest/download/keploy-linux-amd64
           chmod +x keploy-bin
           sudo mv keploy-bin /usr/local/bin/keploy
           keploy version
+
 
       - name: Run Keploy Tests
         run: keploy test --base-path http://localhost:8000
