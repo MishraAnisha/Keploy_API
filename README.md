@@ -1,77 +1,53 @@
-# Crud_Keploy-TEST
+# Keploy_API
 
-# User Management API
+## 🌐 User Management API with Keploy Test Integration
 
-This repository contains a Node.js RESTful API server for managing users, built with Express and MongoDB. It includes unit, integration, and API tests to ensure reliability and correctness.
+This repository contains a Node.js RESTful API server for managing users, built with **Express** and **MongoDB**. It includes **unit**, **integration**, and **API tests** using **Keploy**, ensuring end-to-end reliability and correctness.
 
 ---
 
-## API Overview
+## 🚀 API Overview
 
 The API provides endpoints to perform CRUD operations on users:
 
-- **Create User**: `POST /api/user/create`
-- **Get All Users**: `GET /api/user/getallusers`
-- **Update User**: `PUT /api/user/update/:id`
-- **Delete User**: `DELETE /api/user/delete/:id`
+- `POST /api/users/create` → Create a new user  
+- `GET /api/users/getallusers` → Retrieve all users  
+- `PUT /api/users/update/:id` → Update a user by ID  
+- `DELETE /api/users/delete/:id` → Delete a user by ID  
 
-Each user has the following fields:
-
-- `name` (String, required)
-- `email` (String, required, unique)
-- `address` (String, required)
-
----
-
-## Tech Stack
-
-- **Node.js** - JavaScript runtime
-- **Express** - Web framework for Node.js
-- **MongoDB** - NoSQL database
-- **Mongoose** - ODM for MongoDB
-- **Mocha** - Test framework
-- **Chai** - Assertion library
-- **Supertest** - HTTP assertions for testing APIs
-- **Nyc** - Code coverage tool
+### 📦 Each user has the following fields:
+- `name` (String, required)  
+- `email` (String, required, unique)  
+- `address` (String, required)  
 
 ---
 
-## Getting Started
+## 🛠️ Tech Stack
 
-### Prerequisites
+- **Node.js** – JavaScript runtime  
+- **Express** – Web framework for Node.js  
+- **MongoDB** – NoSQL database  
+- **Mongoose** – ODM for MongoDB  
+- **Mocha, Chai** – Unit & integration testing  
+- **Supertest** – API test assertions  
+- **Nyc** – Code coverage tool  
+- **Keploy** – Record-replay based API test automation with mocks  
 
-- Node.js v16 or higher
-- MongoDB (local or remote instance)
+---
 
-### Installation
+## ⚙️ Getting Started
 
-1) Run npm install
+### 🔑 Prerequisites
 
-2) Create .env file with PORT, MONGO_URL, MONGO_URL_TEST
+- Node.js v16+
+- MongoDB running locally or on Atlas
 
-3) Start MongoDB server
+### 🧰 Setup Instructions
 
-4) Run npm test
+```bash
+# Clone the repository
+git clone https://github.com/MishraAnisha/Keploy_API.git
+cd Keploy_API
 
-
-Testing Frameworks & Tools
-Mocha: Test runner for asynchronous testing.
-
-Chai: Provides human-readable assertions.
-
-Supertest: Allows HTTP testing of Express routes.
-
-Nyc: Generates code coverage reports.
-
-Test Coverage
-Achieved 100% passing tests for all API endpoints.
-
-Code coverage report is generated using nyc.
-
-Below is a screenshot of the test coverage:
-
-
-
-
-<img width="503" alt="image" src="https://github.com/user-attachments/assets/16c81837-fe7f-47a7-aab8-324047e48dc8" />
-
+# Install dependencies
+npm install
