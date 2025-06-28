@@ -11,7 +11,17 @@
     "http"
   ],
   "paths": {
-    "/api/user/": {
+    "/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/users/": {
       "get": {
         "tags": [
           "Users"
@@ -65,14 +75,11 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
-          },
           "201": {
             "description": "User created successfully"
           },
-          "400": {
-            "description": "Bad Request"
+          "409": {
+            "description": "Conflict"
           },
           "500": {
             "description": "Internal Server Error"
@@ -80,7 +87,7 @@
         }
       }
     },
-    "/api/user/{id}": {
+    "/api/users/{id}": {
       "put": {
         "tags": [
           "Users"
@@ -123,6 +130,9 @@
           }
         ],
         "responses": {
+          "200": {
+            "description": "OK"
+          },
           "201": {
             "description": "User updated successfully"
           },
@@ -152,6 +162,9 @@
         "responses": {
           "201": {
             "description": "User deleted successfully"
+          },
+          "204": {
+            "description": "No Content"
           },
           "404": {
             "description": "Not Found"
