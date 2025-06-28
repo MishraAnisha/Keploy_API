@@ -21,12 +21,10 @@ jobs:
           nohup npx nodemon index.js &
           sleep 5
 
-      - run: |
+      - name: Install Keploy CLI
+        run: |
           curl --silent -L https://keploy.io/ent/install.sh | bash
 
-      - run: |
-          export KEPLOY_API_KEY=${{ secrets.KEPLOY_API_KEY }}
-          keploy test-suite \
-            --app=YOUR_APP_ID \
-            --base-path http://localhost:8000 \
-            --cloud
+      - name: Run Keploy Test Suite
+        run: |
+          export KEPLOY_API_KEY=+nwjpM222AumgOF13A== && keploy test-suite --app=bc1e9a2f-be3c-4b7c-9d07-a5fe53fe578f --base-path https://522a-2405-201-a009-951-259d-4585-e3e8-7c7b.ngrok-free.app --cloud
