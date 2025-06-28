@@ -24,13 +24,14 @@ jobs:
 
       - name: Start the app
         run: |
-          nohup npx nodemon index.js &   # If you're using nodemon
-          sleep 5                         # Wait for the app to boot up
+          nohup npx nodemon index.js &    # Start your app in background
+          sleep 5                          # Wait for app to be ready
 
-      - name: Install Keploy CLI
+      - name: Download and Install Keploy
         run: |
-          curl -sSfL https://get.keploy.io/install.sh | sh
-          sudo mv keploy /usr/local/bin/keploy
+          curl -LO https://github.com/keploy/keploy/releases/latest/download/keploy-linux-amd64
+          chmod +x keploy-linux-amd64
+          sudo mv keploy-linux-amd64 /usr/local/bin/keploy
 
       - name: Run Keploy Tests
         run: keploy test --base-path http://localhost:8000
